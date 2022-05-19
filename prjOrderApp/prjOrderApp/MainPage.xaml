@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjOrderApp.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="票券基本資料管理" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="票券編號" FontSize="Title"/>
+        <Entry x:Name="txtID" FontSize="30"/>
+        <Label Text="座位" FontSize="Title"/>
+        <Entry x:Name="txtSeat" FontSize="30"/>
+        <Label Text="日期/時間" FontSize="Title"/>
+        <Entry x:Name="txtDate" FontSize="30"/>
+        <Label Text="場次" FontSize="Title"/>
+        <Entry x:Name="txt場次" FontSize="30"/>
+        <Label Text="票種" FontSize="Title"/>
+        <Entry x:Name="txt票種" FontSize="30"/>
+
+        <StackLayout x:Name="stkBtns" Orientation="Horizontal">
+            <ImageButton x:Name="btnF" Clicked="btnArrow" Background="#00000000" Source="first.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnP" Clicked="btnArrow" Background="#00000000" Source="pri.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnN" Clicked="btnArrow" Background="#00000000" Source="next.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnL" Clicked="btnArrow" Background="#00000000" Source="last.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton Background="#00000000" Source="query.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton Background="#00000000" Source="list.png" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
