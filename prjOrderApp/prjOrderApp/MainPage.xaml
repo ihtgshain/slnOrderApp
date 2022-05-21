@@ -27,7 +27,7 @@
         </StackLayout>
         <Slider x:Name="naviSlider" Background="Navy" ThumbColor="White" ValueChanged="SliderValueChanged"/>
         <StackLayout Orientation="Horizontal">
-        <Label Text="{Binding Source={x:Reference txtID},Path=Text,StringFormat='目前為第 {0} /'}" />
+        <!--<Label Text="{Binding Source={x:Reference txtID},Path=Text,StringFormat='目前為第 {0} /'}" />-->
         <Label x:Name="txt共幾張票"/>
         </StackLayout>
     </StackLayout>

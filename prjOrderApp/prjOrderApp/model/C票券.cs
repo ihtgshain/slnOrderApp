@@ -13,5 +13,6 @@ namespace prjOrderApp.model
         public string 票種 { get; set; }
         public string uriImg { get; set; }
         public string 概要 { get; set; } 
+        public bool 尚未訂票 { get; set; }
     }
 }

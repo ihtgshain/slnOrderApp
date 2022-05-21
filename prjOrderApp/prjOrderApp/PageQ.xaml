@@ -7,7 +7,10 @@
         <StackLayout>
             <Image x:Name="movieImage" HeightRequest="500" WidthRequest="400"/>
             <Label x:Name="txtDescription" Text="" FontSize="Large" TextColor="Navy" HorizontalTextAlignment="Center"/>
-            <Label x:Name="txtInfo" Text="" FontSize="20"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                <Label x:Name="txtInfo" Text="" FontSize="20"/>
+                <ImageButton Source="reserve" Clicked="btnReserve"/>
+            </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <ImageButton x:Name="btnP" Source="pri" Clicked="btnsClicked"  Background="#00000000" />
                 <Label x:Name="txtNavi" Text="" FontSize="20" VerticalTextAlignment="End"/>
