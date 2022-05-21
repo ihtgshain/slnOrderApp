@@ -11,5 +11,7 @@ namespace prjOrderApp.model
         public string 日期 { get; set; }
         public string 場次 { get; set; }
         public string 票種 { get; set; }
+        public string uriImg { get; set; }
+        public string 概要 { get; set; } 
     }
 }

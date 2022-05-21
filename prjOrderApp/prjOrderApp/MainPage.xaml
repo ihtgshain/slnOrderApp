@@ -17,16 +17,19 @@
         <Entry x:Name="txt場次" FontSize="30"/>
         <Label Text="票種" FontSize="Title"/>
         <Entry x:Name="txt票種" FontSize="30"/>
-
         <StackLayout x:Name="stkBtns" Orientation="Horizontal">
-            <ImageButton x:Name="btnF" Clicked="btnArrow" Background="#00000000" Source="first.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton x:Name="btnP" Clicked="btnArrow" Background="#00000000" Source="pri.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton x:Name="btnN" Clicked="btnArrow" Background="#00000000" Source="next.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton x:Name="btnL" Clicked="btnArrow" Background="#00000000" Source="last.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton Background="#00000000" Source="query.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnF" Clicked="BtnArrow" Background="#00000000" Source="first.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnP" Clicked="BtnArrow" Background="#00000000" Source="pri.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnN" Clicked="BtnArrow" Background="#00000000" Source="next.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnL" Clicked="BtnArrow" Background="#00000000" Source="last.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton Clicked="BtnQuery" Background="#00000000" Source="query.png" HorizontalOptions="FillAndExpand"/>
             <ImageButton Background="#00000000" Source="list.png" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-
+        <Slider x:Name="naviSlider" Background="Navy" ThumbColor="White" ValueChanged="SliderValueChanged"/>
+        <StackLayout Orientation="Horizontal">
+        <Label Text="{Binding Source={x:Reference txtID},Path=Text,StringFormat='目前為第 {0} /'}" />
+        <Label x:Name="txt共幾張票"/>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

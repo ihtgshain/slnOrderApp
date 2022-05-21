@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjOrderApp.PageQ"
+             Title="電影資訊">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="movieImage" HeightRequest="500" WidthRequest="400"/>
+            <Label x:Name="txtDescription" Text="" FontSize="Large" TextColor="Navy" HorizontalTextAlignment="Center"/>
+            <Label x:Name="txtInfo" Text="" FontSize="20"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <ImageButton x:Name="btnP" Source="pri" Clicked="btnsClicked"  Background="#00000000" />
+                <Label x:Name="txtNavi" Text="" FontSize="20" VerticalTextAlignment="End"/>
+                <ImageButton x:Name="btnN" Source="next" Clicked="btnsClicked" Background="#00000000" />
+            </StackLayout>
+            <ImageButton x:Name="btnH" Source="home" Clicked="btnsClicked" Background="#00000000" HorizontalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
