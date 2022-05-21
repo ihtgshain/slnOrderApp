@@ -51,7 +51,7 @@ namespace prjOrderApp
 
         private void SetNumOfTickets()
         {
-            if(list.Count <=2)
+            if(list.Count <2)
             {
                 naviSlider.IsEnabled = false;
                 naviSlider.Maximum = 1;
@@ -60,7 +60,8 @@ namespace prjOrderApp
             {
                 naviSlider.Maximum = list.Count - 1;
             }
-            txt共幾張票.Text = $"{list.Count} 筆資料";
+
+            txt共幾張票.Text = list.Count==0 ? "抱歉票已售完" : $" 共{list.Count}筆資料";
         }
 
         private void BtnArrow(object sender, EventArgs e)
@@ -100,6 +101,7 @@ namespace prjOrderApp
             if (list.Count == 0) 
             {
                 txtDate.Text = txtID.Text= txtSeat.Text = txt場次.Text = txt票種.Text = "抱歉票已售完";
+                txtDate.TextColor = txtID.TextColor = txtSeat.TextColor = txt場次.TextColor = txt票種.TextColor = Color.Red;
             }
             else
             {

@@ -37,12 +37,29 @@ namespace prjOrderApp
         private void ShowImage()
         {
             //movieImage.Source = Application.Current.Properties["ImgSource"].ToString();
-            movieImage.Source = new UriImageSource  //store in Cache
+
+            Uri u =null;
+
+            try
             {
-                Uri = new Uri(list[index].uriImg.ToString()),
-                CachingEnabled = true,
-                CacheValidity = new TimeSpan(2, 0, 0, 0)
-            };
+                u = new Uri(list[index].uriImg.ToString());
+                //u = new Uri("Nothing");
+            }
+            catch { u = null; } ;
+
+            if (u == null)
+            {
+                movieImage.Source = "errorlarge.jpg";
+            }
+            else
+            {
+                movieImage.Source = new UriImageSource  //store in Cache
+                {
+                    Uri = u,
+                    CachingEnabled = true,
+                    CacheValidity = new TimeSpan(2, 0, 0, 0)
+                };
+            }
         }
 
         private void btnsClicked(object sender, EventArgs e)
