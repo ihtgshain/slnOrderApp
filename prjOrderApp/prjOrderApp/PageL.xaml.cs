@@ -93,5 +93,12 @@ namespace prjOrderApp
         {
             ((ListView)sender).SelectedItem = null;
         }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            List<C票券> listSearch = isShowingList ? list : list已訂票;
+            listMovie.ItemsSource = listSearch.Where(s => s.EN.ToUpper().Contains(e.NewTextValue.ToUpper())
+                                                || s.場次.Contains(e.NewTextValue));
+        }
     }
 }

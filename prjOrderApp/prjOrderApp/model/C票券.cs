@@ -10,6 +10,7 @@ namespace prjOrderApp.model
         public string 座位 { get; set; }
         public string 日期 { get; set; }
         public string 場次 { get; set; }
+        public string EN { get; set; }
         public string 票種 { get; set; }
         public string urlIma { get; set; }
         public string 概要 { get; set; } 

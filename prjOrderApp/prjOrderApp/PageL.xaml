@@ -6,6 +6,7 @@
             
     <ContentPage.Content>
         <StackLayout>
+            <SearchBar FontSize="Body" Placeholder="中英文名搜尋，不分大小寫" TextChanged="SearchBar_TextChanged"/>
             <StackLayout Orientation="Horizontal">
                 <Label x:Name="lblState" Text="" HorizontalOptions="StartAndExpand"/>
                 <Label x:Name="lblCondition" Text="" TextColor="Red"/>
@@ -29,7 +30,10 @@
                                             <Label Text="{Binding 座位}"/>
                                         </StackLayout>
                                         <Label Text="{Binding 日期}" FontSize="14" VerticalOptions="Center"/>
-                                        <Label Text="{Binding 場次}" FontSize="28" VerticalOptions="Center" TextColor="Blue"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding 場次}" FontSize="28" VerticalOptions="Center" TextColor="Blue"/>
+                                            <Label Text="{Binding EN}" FontSize="18" VerticalOptions="Center" TextColor="Navy"/>
+                                        </StackLayout>
                                         <Label Text="{Binding 概要}" FontSize="18" VerticalOptions="Center" TextColor="LightBlue"/>
                                     </StackLayout>
                                 </StackLayout>

@@ -91,10 +91,18 @@ namespace prjOrderApp
             else if(index == list.Count-1) btnN.IsEnabled = false;
         }
 
-        private void btnCart(object sender, EventArgs e)
-        {   
-            mp.ReserveTicket(list[index]);
-            Navigation.PopToRootAsync();
+        private async void btnCart(object sender, EventArgs e)
+        {
+            C票券 item = list[index];
+            bool result = await DisplayAlert("訂票確認", $"請確認以下內容是否正確：" +
+                $"\r\n{item.日期}的「{item.場次}」" +
+                $"\r\n座位 {item.座位} ({item.票種})", $"我要訂票", $"不訂票");
+            if (result)
+            {
+                mp.ReserveTicket(list[index]);
+                await Navigation.PopToRootAsync();
+            }
+            
         }
     }
 }
