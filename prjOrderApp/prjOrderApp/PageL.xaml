@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjOrderApp.PageL"
+             Title="電影一覽表">
+            
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblState" Text=""/>
+            <ListView x:Name="listMovie" SeparatorColor="GreenYellow" HasUnevenRows="True">
+                      
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="2" BackgroundColor="DarkGray">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding uriImg}" HeightRequest="120" WidthRequest="80"/>
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="票券編號:"/>
+                                            <Label Text="{Binding 票券編號}"/>
+                                            <Label Text="  票種:"/>
+                                            <Label Text="{Binding 票種}"/>
+                                            <Label Text="  座位:"/>
+                                            <Label Text="{Binding 座位}"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding 日期}" FontSize="14" VerticalOptions="Center"/>
+                                        <Label Text="{Binding 場次}" FontSize="28" VerticalOptions="Center" TextColor="Blue"/>
+                                        <Label Text="{Binding 概要}" FontSize="18" VerticalOptions="Center" TextColor="LightBlue"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                    <!--<ImageCell Text="{Binding 票券編號}" TextColor="Black" Detail="{Binding 日期}" DetailColor="Black" ImageSource="{Binding uriImg}"/>-->
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <ImageButton Source="change" Clicked="BtnChang"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

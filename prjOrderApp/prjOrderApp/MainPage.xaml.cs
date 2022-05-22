@@ -118,9 +118,10 @@ namespace prjOrderApp
             if(list.Count == 0) return;
             Navigation.PushAsync(new PageQ(index));
         }
-        
-        
 
-
+        private void BtnList(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageL());
+        }
     }
 }

@@ -23,7 +23,7 @@
             <ImageButton x:Name="btnN" Clicked="BtnArrow" Background="#00000000" Source="next.png" HorizontalOptions="FillAndExpand"/>
             <ImageButton x:Name="btnL" Clicked="BtnArrow" Background="#00000000" Source="last.png" HorizontalOptions="FillAndExpand"/>
             <ImageButton Clicked="BtnQuery" Background="#00000000" Source="query.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton Background="#00000000" Source="list.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton Clicked="BtnList" Background="#00000000" Source="list.png" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
         <Slider x:Name="naviSlider" Background="Navy" ThumbColor="White" ValueChanged="SliderValueChanged"/>
         <StackLayout Orientation="Horizontal">

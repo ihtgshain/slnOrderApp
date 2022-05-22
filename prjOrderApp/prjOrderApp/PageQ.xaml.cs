@@ -92,7 +92,7 @@ namespace prjOrderApp
         }
 
         private void btnReserve(object sender, EventArgs e)
-        {
+        {   
             mp.ReserveTicket(index);
             Navigation.PopToRootAsync();
         }
