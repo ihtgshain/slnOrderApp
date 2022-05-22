@@ -18,12 +18,12 @@
         <Label Text="票種" FontSize="Title"/>
         <Entry x:Name="txt票種" FontSize="30"/>
         <StackLayout x:Name="stkBtns" Orientation="Horizontal">
-            <ImageButton x:Name="btnF" Clicked="BtnArrow" Background="#00000000" Source="first.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton x:Name="btnP" Clicked="BtnArrow" Background="#00000000" Source="pri.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton x:Name="btnN" Clicked="BtnArrow" Background="#00000000" Source="next.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton x:Name="btnL" Clicked="BtnArrow" Background="#00000000" Source="last.png" HorizontalOptions="FillAndExpand"/>
-            <ImageButton Clicked="BtnQuery" Background="#00000000" Source="info" HorizontalOptions="FillAndExpand"/>
-            <ImageButton Clicked="BtnList" Background="#00000000" Source="list" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnF" Clicked="BtnArrow" BackgroundColor="Transparent" Source="first.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnP" Clicked="BtnArrow" BackgroundColor="Transparent" Source="pri.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnN" Clicked="BtnArrow" BackgroundColor="Transparent" Source="next.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton x:Name="btnL" Clicked="BtnArrow" BackgroundColor="Transparent" Source="last.png" HorizontalOptions="FillAndExpand"/>
+            <ImageButton Clicked="BtnQuery" BackgroundColor="Transparent" Source="info" HorizontalOptions="FillAndExpand"/>
+            <ImageButton Clicked="BtnList" BackgroundColor="Transparent" Source="list" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
         <Slider x:Name="naviSlider" Background="Navy" ThumbColor="White" ValueChanged="SliderValueChanged"/>
         <StackLayout Orientation="Horizontal">

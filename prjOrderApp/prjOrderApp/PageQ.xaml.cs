@@ -42,7 +42,7 @@ namespace prjOrderApp
 
             try
             {
-                u = new Uri(list[index].uriImg.ToString());
+                u = new Uri(list[index].urlIma.ToString());
                 //u = new Uri("Nothing");
             }
             catch { u = null; } ;
@@ -93,7 +93,7 @@ namespace prjOrderApp
 
         private void btnCart(object sender, EventArgs e)
         {   
-            mp.ReserveTicket(index);
+            mp.ReserveTicket(list[index]);
             Navigation.PopToRootAsync();
         }
     }

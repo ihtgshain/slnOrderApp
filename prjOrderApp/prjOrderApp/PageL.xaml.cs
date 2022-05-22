@@ -32,13 +32,66 @@ namespace prjOrderApp
             isShowingList = !isShowingList;
             ShowList();
         }
+        private void BtnHome(object sender, EventArgs e)
+        {
+            Navigation.PopToRootAsync();
+        }
 
         private void ShowList()
         {
-            if(list.Count ==0) isShowingList = false;
-            else if (list已訂票.Count ==0) isShowingList = true;
-            lblState.Text = isShowingList ? "目前空位如下：" : "您訂的票如下：";
-            listMovie.ItemsSource = isShowingList ? list : list已訂票;
+            if (list已訂票.Count == 0)
+            {
+                lblCondition.Text = "(您目前尚未訂票)";
+                isShowingList = true;
+            }   
+            else if (list.Count == 0)
+            {
+                lblCondition.Text = "(目前已無空位)";
+                isShowingList = false;
+            }
+            else
+            {
+                lblCondition.Text = "";
+            }
+
+            listMovie.ItemsSource = null;
+            if (isShowingList)
+            {
+                lblState.Text = "目前空位如下，點擊可訂票：";
+                lblState.TextColor=Color.BlueViolet;
+                listMovie.ItemsSource = list;
+            }
+            else
+            {
+                lblState.Text = "您訂的票如下，點擊可退票：";
+                lblState.TextColor = Color.Blue;
+                listMovie.ItemsSource = list已訂票;
+            }
+        }
+
+        private async void listMovie_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var item = e.Item as C票券;
+            string strAct = item.尚未訂票 ? "訂票" : "退票";
+            bool result = await DisplayAlert($"{strAct}確認", $"請確認{strAct}內容是否正確：" +
+                $"\r\n{item.日期}的「{item.場次}」" +
+                $"\r\n座位 {item.座位} ({item.票種})", $"我要{strAct}", $"不{strAct}");
+
+            if (item.尚未訂票 && result)
+            {
+                mp.ReserveTicket(item);
+                ShowList();
+            }
+            else if(!item.尚未訂票 && result)
+            {
+                mp.RefundTicket(item);
+                ShowList();
+            }
+        }
+
+        private void listMovie_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

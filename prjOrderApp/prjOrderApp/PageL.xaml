@@ -6,15 +6,19 @@
             
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="lblState" Text=""/>
-            <ListView x:Name="listMovie" SeparatorColor="GreenYellow" HasUnevenRows="True">
-                      
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblState" Text="" HorizontalOptions="StartAndExpand"/>
+                <Label x:Name="lblCondition" Text="" TextColor="Red"/>
+            </StackLayout>
+            <ListView x:Name="listMovie" SeparatorColor="GreenYellow" HasUnevenRows="True"
+                      ItemTapped="listMovie_ItemTapped">
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="2" BackgroundColor="DarkGray">
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding uriImg}" HeightRequest="120" WidthRequest="80"/>
+                                    <Image Source="{Binding urlIma}" HeightRequest="120" WidthRequest="80"/>
                                     <StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label Text="票券編號:"/>
@@ -32,11 +36,12 @@
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
-                    <!--<ImageCell Text="{Binding 票券編號}" TextColor="Black" Detail="{Binding 日期}" DetailColor="Black" ImageSource="{Binding uriImg}"/>-->
                 </ListView.ItemTemplate>
-
             </ListView>
-            <ImageButton Source="change" Clicked="BtnChang"/>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="change" Clicked="BtnChang" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"/>
+                <ImageButton Source="home" Clicked="BtnHome" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

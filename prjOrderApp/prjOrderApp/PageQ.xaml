@@ -9,14 +9,14 @@
             <Label x:Name="txtDescription" Text="" FontSize="Large" TextColor="Navy" HorizontalTextAlignment="Center"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                 <Label x:Name="txtInfo" Text="" FontSize="20"/>
-                <ImageButton Source="cart" Clicked="btnCart"/>
+                <ImageButton Source="cart" Clicked="btnCart" BackgroundColor="Transparent"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <ImageButton x:Name="btnP" Source="pri" Clicked="btnsClicked"  Background="#00000000" />
+                <ImageButton x:Name="btnP" Source="pri" Clicked="btnsClicked"  BackgroundColor="Transparent" />
                 <Label x:Name="txtNavi" Text="" FontSize="20" VerticalTextAlignment="End"/>
-                <ImageButton x:Name="btnN" Source="next" Clicked="btnsClicked" Background="#00000000" />
+                <ImageButton x:Name="btnN" Source="next" Clicked="btnsClicked" BackgroundColor="Transparent" />
             </StackLayout>
-            <ImageButton x:Name="btnH" Source="home" Clicked="btnsClicked" Background="#00000000" HorizontalOptions="End"/>
+            <ImageButton x:Name="btnH" Source="home" Clicked="btnsClicked" BackgroundColor="Transparent" HorizontalOptions="End"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
