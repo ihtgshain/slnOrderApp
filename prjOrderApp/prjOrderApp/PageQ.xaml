@@ -9,7 +9,7 @@
             <Label x:Name="txtDescription" Text="" FontSize="Large" TextColor="Navy" HorizontalTextAlignment="Center"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="End">
                 <Label x:Name="txtInfo" Text="" FontSize="20"/>
-                <ImageButton Source="reserve" Clicked="btnReserve"/>
+                <ImageButton Source="cart" Clicked="btnCart"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <ImageButton x:Name="btnP" Source="pri" Clicked="btnsClicked"  Background="#00000000" />

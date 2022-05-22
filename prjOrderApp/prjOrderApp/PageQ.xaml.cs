@@ -91,7 +91,7 @@ namespace prjOrderApp
             else if(index == list.Count-1) btnN.IsEnabled = false;
         }
 
-        private void btnReserve(object sender, EventArgs e)
+        private void btnCart(object sender, EventArgs e)
         {   
             mp.ReserveTicket(index);
             Navigation.PopToRootAsync();
