@@ -91,16 +91,18 @@ namespace prjOrderApp
             item.尚未訂票 = false;
             list已訂票.Add(item);
             list.Remove(item);
-            SetNumOfTickets();
-            index = 0;
-            naviSlider.Value = index;
-            ShowDate();
+            AdjustIndex();
         }
         public void RefundTicket(C票券 item)
         {
             item.尚未訂票 = true;
             list.Add(item);
             list已訂票.Remove(item);
+            AdjustIndex();
+        }
+
+        public void AdjustIndex()
+        {
             SetNumOfTickets();
             index = 0;
             naviSlider.Value = index;
@@ -121,6 +123,7 @@ namespace prjOrderApp
                 txtSeat.Text = list[index].座位;
                 txt場次.Text = list[index].場次;
                 txt票種.Text = list[index].票種;
+                txtDate.TextColor = txtID.TextColor = txtSeat.TextColor = txt場次.TextColor = txt票種.TextColor = Color.Black;
             }
         }
 

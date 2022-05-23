@@ -8,15 +8,15 @@
             <Label Text="票券基本資料管理" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Label Text="票券編號" FontSize="Title"/>
-        <Entry x:Name="txtID" FontSize="30"/>
+        <Entry x:Name="txtID" FontSize="30" IsReadOnly="True"/>
         <Label Text="座位" FontSize="Title"/>
-        <Entry x:Name="txtSeat" FontSize="30"/>
+        <Entry x:Name="txtSeat" FontSize="30" IsReadOnly="True"/>
         <Label Text="日期/時間" FontSize="Title"/>
-        <Entry x:Name="txtDate" FontSize="30"/>
+        <Entry x:Name="txtDate" FontSize="30" IsReadOnly="True"/>
         <Label Text="場次" FontSize="Title"/>
-        <Entry x:Name="txt場次" FontSize="30"/>
+        <Entry x:Name="txt場次" FontSize="30" IsReadOnly="True"/>
         <Label Text="票種" FontSize="Title"/>
-        <Entry x:Name="txt票種" FontSize="30"/>
+        <Entry x:Name="txt票種" FontSize="30" IsReadOnly="True"/>
         <StackLayout x:Name="stkBtns" Orientation="Horizontal">
             <ImageButton x:Name="btnF" Clicked="BtnArrow" BackgroundColor="Transparent" Source="first.png" HorizontalOptions="FillAndExpand"/>
             <ImageButton x:Name="btnP" Clicked="BtnArrow" BackgroundColor="Transparent" Source="pri.png" HorizontalOptions="FillAndExpand"/>

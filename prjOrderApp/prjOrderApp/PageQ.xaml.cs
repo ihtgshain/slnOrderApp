@@ -57,7 +57,7 @@ namespace prjOrderApp
                 {
                     Uri = u,
                     CachingEnabled = true,
-                    CacheValidity = new TimeSpan(2, 0, 0, 0)
+                    CacheValidity = new TimeSpan(3, 0, 0, 0)
                 };
             }
         }
@@ -65,21 +65,15 @@ namespace prjOrderApp
         private void btnsClicked(object sender, EventArgs e)
         {
             ImageButton btn = (ImageButton)sender;
+
             if (btn == btnH)
-            {
                 Navigation.PopToRootAsync();
-            }
             else if (btn == btnP && index > 0)
-            {
                 index--;
-                mp.index = index;
-                mp.ChangeSliderValueFromPageQ(index);
-            }
-            else if (btn == btnN && index < list.Count - 1) {
+            else if (btn == btnN && index < list.Count - 1) 
                 index++;
-                mp.ChangeSliderValueFromPageQ(index);
-            }
-            
+
+            mp.ChangeSliderValueFromPageQ(index);
             ShowImage();
             ShowWords();
             CheckBtnVisable();

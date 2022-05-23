@@ -13,7 +13,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <ImageButton x:Name="btnP" Source="pri" Clicked="btnsClicked"  BackgroundColor="Transparent" />
-                <Label x:Name="txtNavi" Text="" FontSize="20" VerticalTextAlignment="End"/>
+                <Label x:Name="txtNavi" Text="" FontSize="Large" VerticalTextAlignment="Center"/>
                 <ImageButton x:Name="btnN" Source="next" Clicked="btnsClicked" BackgroundColor="Transparent" />
             </StackLayout>
             <ImageButton x:Name="btnH" Source="home" Clicked="btnsClicked" BackgroundColor="Transparent" HorizontalOptions="End"/>

@@ -42,6 +42,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            
             <StackLayout Orientation="Horizontal">
                 <ImageButton Source="change" Clicked="BtnChang" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"/>
                 <ImageButton Source="home" Clicked="BtnHome" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand"/>

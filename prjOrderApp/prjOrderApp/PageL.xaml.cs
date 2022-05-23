@@ -77,12 +77,12 @@ namespace prjOrderApp
                 $"\r\n{item.日期}的「{item.場次}」" +
                 $"\r\n座位 {item.座位} ({item.票種})", $"我要{strAct}", $"不{strAct}");
 
-            if (item.尚未訂票 && result)
+            if (result && item.尚未訂票)
             {
                 mp.ReserveTicket(item);
                 ShowList();
             }
-            else if(!item.尚未訂票 && result)
+            else if(result && !item.尚未訂票)
             {
                 mp.RefundTicket(item);
                 ShowList();
@@ -96,8 +96,8 @@ namespace prjOrderApp
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            List<C票券> listSearch = isShowingList ? list : list已訂票;
-            listMovie.ItemsSource = listSearch.Where(s => s.EN.ToUpper().Contains(e.NewTextValue.ToUpper())
+            List<C票券> listForSearch = isShowingList ? list : list已訂票;
+            listMovie.ItemsSource = listForSearch.Where(s => s.EN.ToUpper().Contains(e.NewTextValue.ToUpper())
                                                 || s.場次.Contains(e.NewTextValue));
         }
     }
