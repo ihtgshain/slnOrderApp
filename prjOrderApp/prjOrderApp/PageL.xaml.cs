@@ -1,4 +1,5 @@
 ﻿using prjOrderApp.model;
+using prjOrderApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,19 +17,21 @@ namespace prjOrderApp
         MainPage mp = Application.Current.Properties["page"] as MainPage;
         List<C票券> list;
         List<C票券> list已訂票;
+        C票券ViewModel vModel;
        
         bool isShowingList = true;
         public PageL()
         {
             InitializeComponent();
-            list = mp.list;
-            list已訂票 = mp.list已訂票;
+            vModel = mp.vModel;
+            list = vModel.list;
+            list已訂票 = vModel.list已訂票;
             ShowList();
-
         }
 
         private void BtnChang(object sender, EventArgs e)
         {
+            if (list.Count == 0 || list已訂票.Count == 0) return;
             isShowingList = !isShowingList;
             ShowList();
         }
@@ -79,26 +82,23 @@ namespace prjOrderApp
 
             if (result && item.尚未訂票)
             {
-                mp.ReserveTicket(item);
+                vModel.ReserveTicket(item);
+                list已訂票 = vModel.list已訂票;
                 ShowList();
             }
-            else if(result && !item.尚未訂票)
+            else if (result && !item.尚未訂票)
             {
-                mp.RefundTicket(item);
+                vModel.RefundTicket(item);
+                list = vModel.list;
                 ShowList();
             }
-        }
-
-        private void listMovie_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            ((ListView)sender).SelectedItem = null;
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             List<C票券> listForSearch = isShowingList ? list : list已訂票;
             listMovie.ItemsSource = listForSearch.Where(s => s.EN.ToUpper().Contains(e.NewTextValue.ToUpper())
-                                                || s.場次.Contains(e.NewTextValue));
+                                                || s.場次.Contains(e.NewTextValue) || s.座位.Contains(e.NewTextValue));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:prjOrderApp.ViewModel"
              x:Class="prjOrderApp.MainPage">
 
     <StackLayout>
@@ -25,9 +26,9 @@
             <ImageButton Clicked="BtnQuery" BackgroundColor="Transparent" Source="info" HorizontalOptions="FillAndExpand"/>
             <ImageButton Clicked="BtnList" BackgroundColor="Transparent" Source="list" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-        <Slider x:Name="naviSlider" Background="Navy" ThumbColor="White" ValueChanged="SliderValueChanged"/>
+        <Slider x:Name="naviSlider" x:FieldModifier="public" Background="Navy" ThumbColor="White" ValueChanged="SliderValueChanged"/>   
         <StackLayout>
-            <Label x:Name="txt共幾張票"/>
+            <Label x:Name="txt共幾張票" x:FieldModifier="public"/>
         </StackLayout>
     </StackLayout>
 

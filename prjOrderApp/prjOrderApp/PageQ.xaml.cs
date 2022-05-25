@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using prjOrderApp.model;
+using prjOrderApp.ViewModel;
 
 namespace prjOrderApp
 {
@@ -14,20 +15,24 @@ namespace prjOrderApp
     public partial class PageQ : ContentPage
     {
         MainPage mp= Application.Current.Properties["page"] as MainPage;
-        List<C票券> list;// = Application.Current.Properties["page"] as List<C票券>;
+        List<C票券> list;
+        C票券ViewModel vModel;
         int index = 0;
-        public PageQ(int indexFomnMainPage)
+        public PageQ(int i)
         {
-            index = indexFomnMainPage;
-            list = mp.list;
+            if (i < 0) i = 0;
+            index = i;
+            list = mp.vModel.list;
+            vModel = mp.vModel;
+            list = vModel.list;
             InitializeComponent();
             ShowImage();
             ShowWords();
-            CheckBtnVisable();
+            CheckBtnEnable();
         }
 
         private void ShowWords()
-        { 
+        {   
             var ml = list[index];
             txtDescription.Text = $"{ml.場次}：{ml.概要}";
             txtInfo.Text = $"{ml.日期} {ml.座位} {ml.票種}";
@@ -75,7 +80,7 @@ namespace prjOrderApp
 
             ShowDateAndChangeIndexInMP();
         }
-        private void CheckBtnVisable()
+        private void CheckBtnEnable()
         {
             btnP.IsEnabled = btnN.IsEnabled = true;
             if(index==0) btnP.IsEnabled = false;
@@ -90,14 +95,13 @@ namespace prjOrderApp
                 $"\r\n座位 {item.座位} ({item.票種})", $"我要訂票", $"不訂票");
             if (result)
             {
-                mp.ReserveTicket(list[index]);
+                mp.vModel.ReserveTicket(list[index]);
                 await Navigation.PopToRootAsync();
             }
-            
         }
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            index = list.IndexOf(mp.list.Where(s => s.EN.ToUpper().Contains(e.NewTextValue.ToUpper())
+            index = list.IndexOf(mp.vModel.list.Where(s => s.EN.ToUpper().Contains(e.NewTextValue.ToUpper())
                                                 || s.場次.Contains(e.NewTextValue)).FirstOrDefault());
             if (index != -1)
                 ShowDateAndChangeIndexInMP();
@@ -105,10 +109,10 @@ namespace prjOrderApp
 
         private void ShowDateAndChangeIndexInMP()
         {
-            mp.ChangeSliderValueFromPageQ(index);
+            mp.vModel.ChangeSliderValueFromPageQ(index);
             ShowImage();
             ShowWords();
-            CheckBtnVisable();
+            CheckBtnEnable();
         }
     }
 }
