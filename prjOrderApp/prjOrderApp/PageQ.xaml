@@ -16,7 +16,10 @@
                 <Label x:Name="txtNavi" Text="" FontSize="Large" VerticalTextAlignment="Center"/>
                 <ImageButton x:Name="btnN" Source="next" Clicked="btnsClicked" BackgroundColor="Transparent" />
             </StackLayout>
-            <ImageButton x:Name="btnH" Source="home" Clicked="btnsClicked" BackgroundColor="Transparent" HorizontalOptions="End"/>
+            <StackLayout Orientation="Horizontal">
+                <SearchBar FontSize="Body" Placeholder="中英文名搜尋，不分大小寫" TextChanged="SearchBar_TextChanged"/>
+                <ImageButton x:Name="btnH" Source="home" Clicked="btnsClicked" BackgroundColor="Transparent" HorizontalOptions="End"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

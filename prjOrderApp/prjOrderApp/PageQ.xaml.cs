@@ -73,10 +73,7 @@ namespace prjOrderApp
             else if (btn == btnN && index < list.Count - 1) 
                 index++;
 
-            mp.ChangeSliderValueFromPageQ(index);
-            ShowImage();
-            ShowWords();
-            CheckBtnVisable();
+            ShowDateAndChangeIndexInMP();
         }
         private void CheckBtnVisable()
         {
@@ -97,6 +94,21 @@ namespace prjOrderApp
                 await Navigation.PopToRootAsync();
             }
             
+        }
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            index = list.IndexOf(mp.list.Where(s => s.EN.ToUpper().Contains(e.NewTextValue.ToUpper())
+                                                || s.場次.Contains(e.NewTextValue)).FirstOrDefault());
+            if (index != -1)
+                ShowDateAndChangeIndexInMP();
+        }
+
+        private void ShowDateAndChangeIndexInMP()
+        {
+            mp.ChangeSliderValueFromPageQ(index);
+            ShowImage();
+            ShowWords();
+            CheckBtnVisable();
         }
     }
 }
