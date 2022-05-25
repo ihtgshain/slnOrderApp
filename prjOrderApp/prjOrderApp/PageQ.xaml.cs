@@ -20,7 +20,6 @@ namespace prjOrderApp
         int index = 0;
         public PageQ(int i)
         {
-            if (i < 0) i = 0;
             index = i;
             list = mp.vModel.list;
             vModel = mp.vModel;

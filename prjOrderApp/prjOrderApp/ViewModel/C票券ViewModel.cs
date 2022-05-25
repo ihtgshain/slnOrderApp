@@ -68,7 +68,8 @@ namespace prjOrderApp.ViewModel
         public void SliderValueChanged()
         {
             index = (int)mp.naviSlider.Value;
-            if (index < 0 || index >= list.Count) return;
+            if (index < 0) index = 0;
+            else if(index > list.Count-1) index=list.Count-1;
             mp.ShowDate();
         }
 
@@ -147,7 +148,7 @@ namespace prjOrderApp.ViewModel
         }
         private void SetNumOfTickets()
         {
-            if (list.Count < 2)
+            if (list.Count <= 1)
             {
                 mp.naviSlider.IsEnabled = false;
                 mp.naviSlider.Maximum = 1;
